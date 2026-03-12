@@ -1,0 +1,21 @@
+{% for product in products %}
+
+<div class="card" style="width: 18rem; float:left; margin:10px;">
+
+{% if product.image and product.image.url %}
+<img src="{{ product.image.url }}" class="card-img-top" width="350">
+{% else %}
+<div style="height:200px;background:#eee;display:flex;align-items:center;justify-content:center;">
+No image
+</div>
+{% endif %}
+
+<div class="card-body">
+<h5 class="card-title">{{ product.name }}</h5>
+<p class="card-text">{{ product.price }} $</p>
+<a href="/cart/" class="btn btn-primary">Add to cart</a>
+</div>
+
+</div>
+
+{% endfor %}
